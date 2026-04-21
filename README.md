@@ -7,8 +7,11 @@
 EmergeX is a Python library for building chemical reaction networks (CRNs), simulating their dynamics, and optimizing model parameters against either desired emergent behaviors or experimental time-course data. It supports workflows where you define a reaction system, specify what the system should do, and then use gradient-based optimization to search for parameters that produce that outcome. The library supports a built-in parameter fitting pipeline. Examples of experiment fitting API implementation are coming soon (> Version 1.0.0).
 
 # NOTE
-
 This is a copy of [this repo](https://github.com/YanceyColin/EmergeX/tree/main) used for the purposes of displaying the work I (Cameron Kolisko) have contributed for my Master's Project. 
+
+# Installation
+`pip install jax==0.8.1`
+
 
 ## Example outputs
 
