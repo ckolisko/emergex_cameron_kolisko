@@ -9,8 +9,8 @@ EmergeX is a Python library for building chemical reaction networks (CRNs), simu
 # NOTE
 This is a copy of [this repo](https://github.com/YanceyColin/EmergeX/tree/main) used for the purposes of displaying the work I (Cameron Kolisko) have contributed for my Master's Project. 
 
-# Installation
-`pip install jax==0.8.1`
+# Dependencies
+`pip install jax==0.8.1 matplotlib==3.10.8 pandas==3.0.2 numpy==2.4.4`
 
 
 ## Example outputs
