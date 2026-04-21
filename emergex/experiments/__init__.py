@@ -14,20 +14,24 @@ from .experiment import (
     ExperimentGroup
 )
 
-from .experimentCompiler import (
-    ExperimentCompiler,
-    ExperimentGroupCompiler
-)
+# from .experimentCompiler import (
+
+# )
 
 from .manager import (
    OptimizeExperimentsManager
 )
 
+from .experimentCompiler import (
+    ExperimentCompiler,
+    ExperimentGroupCompiler
+)
 
 __all__ = [
     "Signal",
     "Experiment",
     "ExperimentGroup",
-
-    "OptimizeExperimentsManager"
+    "OptimizeExperimentsManager",
+    "ExperimentCompiler",
+    "ExperimentGroupCompiler"
 ]

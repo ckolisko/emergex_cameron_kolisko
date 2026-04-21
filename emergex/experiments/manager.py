@@ -54,14 +54,20 @@ class OptimizeExperimentsManager(ManagerClass):
 
                     signalCost = 0.0
                     for k, signal in enumerate(expt.Signals):
-                        resultOfInterest = signal.getNormalizeVMAP(initCondInfo.ComponentsDictionary)(
-                            jnp.sum(
-                                jnp.atleast_2d(
-                                    results[precomputedTimeCourseData[i][j][1], signal.getRelevantComponentIndices(crnInfo.CompNameList)]
-                                ),
-                                axis=0
-                            )
-                        )
+                        # resultOfInterest = signal.getNormalizeVMAP(initCondInfo.ComponentsDictionary)(
+                        #     jnp.sum(
+                        #         jnp.atleast_2d(
+                        #             results[precomputedTimeCourseData[i][j][1], signal.getRelevantComponentIndices(crnInfo.CompNameList)]
+                        #         ),
+                        #         axis=0
+                        #     )
+                        # )
+                        time_idx = precomputedTimeCourseData[i][j][1]
+                        comp_idx = signal.getRelevantComponentIndices(crnInfo.CompNameList)                        
+                        raw_result = results[time_idx][:, comp_idx]                        
+                        summed_result = jnp.sum(raw_result, axis=-1)                        
+                        resultOfInterest = signal.getNormalizeVMAP(initCondInfo.ComponentsDictionary)(summed_result)
+                        
                         signalCost += jnp.sum(jnp.square(resultOfInterest - signal.DataPoints) * expt.SignalWeights[k])
                     
                     exptCost += signalCost * experimentGroupObj.ExperimentWeights[j] * normWeights[i]

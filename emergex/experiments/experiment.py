@@ -93,7 +93,7 @@ class Experiment:
 
         if len(signals) == 0:
             raise ValueError("An Experiment object must have at least one Signal object.")
-        standardDPNum = signals[0]
+        standardDPNum = len(signals[0].DataPoints)
         for signal in signals[1:]:
             if len(signal.DataPoints) != standardDPNum:
                 raise ValueError("All Signal objects in an Experiment object must have the same number of data points.")
