@@ -1,0 +1,84 @@
+[build-system]
+requires = ["setuptools>=82.0.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["emergex*"]
+
+[project]
+name = "emergex"
+version = "1.0.0"
+
+authors = [
+    {name = "Colin Yancey",      email = "colinyancey@gmail.com"},
+    {name = "Cameron Kolisko",   email = "cameronkolisko9@gmail.com"},
+    {name = "Rebecca Schulman",  email = "schulman.rk@gmail.com"}
+
+]
+
+maintainers = [
+    {name = "Colin Yancey",      email = "colinyancey@gmail.com"},
+    {name = "Rebecca Schulman",  email = "schulman.rk@gmail.com"}
+]
+
+description = "A package to describe and optimize for emergent behavior using chemical reaction networks (CRNs). Capable of incorporating empirical data for more precise CRN models."
+readme = "README.md"
+requires-python = ">=3.11"
+
+classifiers = [
+    "Development Status :: 1 - Planning", # 2 - Pre-Alpha, 3 - Alpha, once full repo is uploaded depending on progress
+
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Education",
+    "Intended Audience :: Developers",
+
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Chemistry",
+
+    "Operating System :: OS Independent"
+]
+keywords = [
+    "Chemical Modeling",
+    "Mass Action Kinetics",
+    "Chemical Reactions",
+    "Emergent Behavior",
+    "Emergent Function",
+    "Optimization",
+    "Simulation",
+    "Systems Biology",
+    "Chemistry",
+    "Bioinformatics",
+    "Research Tools",
+    "Scientific Computing",
+    "Python",
+    "Data Science",
+    "Chemical Networks",
+    "Biochemical Modeling",
+    "Educational Tools",
+    "Concentration Dynamics",
+    "Rate Laws"
+]
+
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "jax>=0.4",
+    "diffrax>=0.6",
+    "equinox>=0.11",
+    "optax>=0.2",
+    "dill>=0.3.8",
+    "matplotlib>=3.8",
+    "imageio>=2.34",
+    "imageio-ffmpeg>=0.5"
+]
+
+license = "BSD-3-Clause"
+
+[project.urls]
+homepage = "https://github.com/YanceyColin/EmergeX"
+repository = "https://github.com/YanceyColin/EmergeX"
